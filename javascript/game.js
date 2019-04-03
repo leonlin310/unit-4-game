@@ -15,7 +15,7 @@ var crystal4;
         return Math.floor(Math.random() * (max - min + 1)) + min;
         }
     
-    // Function to pick random number for Crystals
+    // Function to pick random number for Crystal1
     function pickCrystalNumber(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
