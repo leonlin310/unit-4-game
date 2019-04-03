@@ -2,7 +2,6 @@
 var wins = 0;
 var losses = 0;
 var points = 0;
-var targetScore = "";
 var computerNumber;
 var crystal1;
 var crystal2;
@@ -30,15 +29,21 @@ resetGame();
 // Test Logic
 
 $(document).on("keyup", function(event){
+    console.log("Key up", event.key);
+    var playerLetter = event.key;
 
+    if (playerLetter === "y"){
+        wins++
+        console.log("win");
 
+        resetGame();
+    }
 
-
-
-
-
-
-
+    else {
+        console.log("lose");
+        losses++
+    }
+updateScoreboard();
 
 });
 
@@ -70,4 +75,8 @@ $(document).on("keyup", function(event){
 
         }
         
-
+    // Create a function that updates the wins/losses
+    function updateScoreboard(){
+        $("#wins").text(wins);
+        $("#losses").text(losses);
+    }
