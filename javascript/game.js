@@ -3,10 +3,11 @@ var wins = 0;
 var losses = 0;
 var points = 0;
 var computerNumber;
-var crystal1;
-var crystal2;
-var crystal3;
-var crystal4;
+var hammerVal;
+var axeVal;
+var panVal;
+var swordVal;
+var counter = 0;
 
  // Function found on Stack Overflow for random number
     function pickComputerNumber(min, max) {
@@ -71,17 +72,46 @@ updateScoreboard();
         console.log("Computer Picks", computerNumber);
 
     // Have a loop number randomly assigned for Crystals
-        crystal1 = pickCrystalNumber(1, 12);
-        console.log("Crystal One Value is", crystal1);
-        crystal2 = pickCrystalNumber(1, 12);
-        console.log("Crystal Two Value is", crystal2);
-        crystal3 = pickCrystalNumber(1, 12);
-        console.log("Crystal Three Value is", crystal3);
-        crystal4 = pickCrystalNumber(1, 12);
-        console.log("Crystal Four Value is", crystal4);
+        hammerVal = pickCrystalNumber(1, 12);
+        console.log("Hammer damage is: ", hammerVal);
+        axeVal = pickCrystalNumber(1, 12);
+        console.log("Axe damage is: ", axeVal);
+        panVal = pickCrystalNumber(1, 12);
+        console.log("Pan damage is: ", panVal);
+        swordVal = pickCrystalNumber(1, 12);
+        console.log("Sword damage is: ", swordVal);
+
+    // Attach a click event to each picture and assign a value to it
+        $(".hammerPic").on("click", function() {
+            counter += hammerVal;
+            console.log("Hammer's current damage is: ", hammerVal);
+            console.log("Cumulative damage is: ", counter);
+         });
+
+         $(".axePic").on("click", function() {
+            counter += axeVal;
+            console.log("Axe's current damage is: ", axeVal);
+            console.log("Cumulative damage is: ", counter);
+         });
+
+         $(".panPic").on("click", function() {
+            counter += panVal;
+            console.log("Frying Pan's current damage is: ", panVal);
+            console.log("Cumulative damage is: ", counter);
+         });
+
+         $(".swordPic").on("click", function() {
+            counter += swordVal;
+            console.log("Sword's current damage is: ", swordVal);
+            console.log("Cumulative damage is: ", counter);
+         });
+
 
         }
         
+       
+
+
     // Create a function that updates the wins/losses
     function updateScoreboard(){
         $("#wins").text(wins);
