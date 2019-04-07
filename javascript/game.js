@@ -9,6 +9,7 @@ var panVal;
 var swordVal;
 var counter = 0;
 
+
 // Function found on Stack Overflow for random number
 function pickComputerNumber(min, max) {
     min = Math.ceil(min);
@@ -41,8 +42,7 @@ $(document).ready(function () {
 
 
 
-    // Test Logic
-
+    //TODO:  Test Logic. THIS WAS THE WORKING CODE
     $(document).on("keyup", function (event) {
         console.log("Key up", event.key);
         var playerLetter = event.key;
@@ -86,35 +86,115 @@ $(document).ready(function () {
             resetGame();
         };
 
-        // Attach a click event to each picture and assign a value to it
-        $(".hammerPic").on("click", function () {
-            counter += hammerVal;
-            console.log("Hammer's current damage is: ", hammerVal);
-            console.log("Cumulative damage is: ", counter);
-        });
+        // Assign an HP value to the monster
 
-        $(".axePic").on("click", function () {
-            counter += axeVal;
-            console.log("Axe's current damage is: ", axeVal);
-            console.log("Cumulative damage is: ", counter);
-        });
 
-        $(".panPic").on("click", function () {
-            counter += panVal;
-            console.log("Frying Pan's current damage is: ", panVal);
-            console.log("Cumulative damage is: ", counter);
-        });
 
-        $(".swordPic").on("click", function () {
-            counter += swordVal;
-            console.log("Sword's current damage is: ", swordVal);
-            console.log("Cumulative damage is: ", counter);
-        });
 
 
     }
 
+    // Attach a click event to each picture and assign a value to it
+    $(".hammerPic").on("click", function () {
+        counter += hammerVal;
+        console.log("Hammer's current damage is: ", hammerVal);
+        console.log("Computers random number is: ", computerNumber);
+        console.log("Cumulative damage is: ", counter);
+        console.log("----------------------------------")
 
+
+        if (counter === computerNumber) {
+            wins++;
+            counter = 0;
+            hammerVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+        else if (counter >= computerNumber) {
+            losses++;
+            counter = 0;
+            hammerVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+    });
+
+    $(".axePic").on("click", function () {
+        counter += axeVal;
+        console.log("Axe's current damage is: ", axeVal);
+        console.log("Computers random number is: ", computerNumber);
+        console.log("Cumulative damage is: ", counter);
+        console.log("----------------------------------")
+
+        if (counter === computerNumber) {
+            wins++;
+            counter = 0;
+            axeVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+        else if (counter >= computerNumber) {
+            losses++;
+            counter = 0;
+            axeVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+    });
+
+    $(".panPic").on("click", function () {
+        counter += panVal;
+        console.log("Frying Pan's current damage is: ", panVal);
+        console.log("Computers random number is: ", computerNumber);
+        console.log("Cumulative damage is: ", counter);
+        console.log("----------------------------------")
+
+        if (counter === computerNumber) {
+            wins++;
+            counter = 0;
+            panVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+        else if (counter >= computerNumber) {
+            losses++;
+            counter = 0;
+            panVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+    });
+
+    $(".swordPic").on("click", function () {
+        counter += swordVal;
+        console.log("Sword's current damage is: ", swordVal);
+        console.log("Computers random number is: ", computerNumber);
+        console.log("Cumulative damage is: ", counter);
+        console.log("----------------------------------")
+
+        if (counter === computerNumber) {
+            wins++;
+            counter = 0;
+            swordVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+        else if (counter >= computerNumber) {
+            losses++;
+            counter = 0;
+            swordVal = 0;
+            resetGame();
+            updateScoreboard();
+        }
+
+    });
 
 
     // Create a function that updates the wins/losses
@@ -123,3 +203,24 @@ $(document).ready(function () {
         $("#losses").text(losses);
     }
 });
+
+
+    // //TODO:  Test Logic. THIS WAS THE WORKING CODE
+    // $(document).on("keyup", function (event) {
+    //     console.log("Key up", event.key);
+    //     var playerLetter = event.key;
+
+    //     if (playerLetter === "y") {
+    //         wins++
+    //         console.log("win");
+
+    //         resetGame();
+    //     }
+
+    //     else {
+    //         console.log("lose");
+    //         losses++
+    //     }
+    //     updateScoreboard();
+
+    // });
