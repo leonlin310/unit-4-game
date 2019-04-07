@@ -70,6 +70,7 @@ $(document).ready(function () {
         //  Have Computer Pick a Number       
         computerNumber = pickComputerNumber(19, 120);
         console.log("Computer Picks", computerNumber);
+        $("h4").text(computerNumber);
 
         // Have a loop number randomly assigned for Crystals
         hammerVal = pickCrystalNumber(1, 12);
@@ -97,6 +98,7 @@ $(document).ready(function () {
     // Attach a click event to each picture and assign a value to it
     $(".hammerPic").on("click", function () {
         counter += hammerVal;
+        $("h3").text(counter);
         console.log("Hammer's current damage is: ", hammerVal);
         console.log("Computers random number is: ", computerNumber);
         console.log("Cumulative damage is: ", counter);
@@ -123,6 +125,7 @@ $(document).ready(function () {
 
     $(".axePic").on("click", function () {
         counter += axeVal;
+        $("h3").text(counter);
         console.log("Axe's current damage is: ", axeVal);
         console.log("Computers random number is: ", computerNumber);
         console.log("Cumulative damage is: ", counter);
@@ -148,6 +151,7 @@ $(document).ready(function () {
 
     $(".panPic").on("click", function () {
         counter += panVal;
+        $("h3").text(counter);
         console.log("Frying Pan's current damage is: ", panVal);
         console.log("Computers random number is: ", computerNumber);
         console.log("Cumulative damage is: ", counter);
@@ -173,6 +177,7 @@ $(document).ready(function () {
 
     $(".swordPic").on("click", function () {
         counter += swordVal;
+        $("h3").text(counter);
         console.log("Sword's current damage is: ", swordVal);
         console.log("Computers random number is: ", computerNumber);
         console.log("Cumulative damage is: ", counter);
@@ -204,23 +209,3 @@ $(document).ready(function () {
     }
 });
 
-
-    // //TODO:  Test Logic. THIS WAS THE WORKING CODE
-    // $(document).on("keyup", function (event) {
-    //     console.log("Key up", event.key);
-    //     var playerLetter = event.key;
-
-    //     if (playerLetter === "y") {
-    //         wins++
-    //         console.log("win");
-
-    //         resetGame();
-    //     }
-
-    //     else {
-    //         console.log("lose");
-    //         losses++
-    //     }
-    //     updateScoreboard();
-
-    // });
