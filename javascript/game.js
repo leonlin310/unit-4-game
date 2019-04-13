@@ -28,11 +28,14 @@ function pickCrystalNumber(min, max) {
 $(document).ready(function () {
 
     $(".start-button").on("click", function () {
-        console.log("i've been touched");
-        $(this).fadeOut("slow");
-        $(".display-4").text("WHAAAATT");
-        $(".lead").text("DID THAT BUTTON JUST DISSAPEAR? ");
-        $(".exp").text("Yes. Yes it did").delay(4000).fadeOut("slow");
+        console.log("i've been touched", $(this));
+        // $( ".start-button" ).fadeOut( "slow", function() {
+        //     // Animation complete.
+        //   });
+        
+        // $(".display-4").text("WHAAAATT");
+        // $(".lead").text("DID THAT BUTTON JUST DISSAPEAR? ");
+        // $(".exp").text("Yes. Yes it did").delay(4000).fadeOut("slow");
 
         resetGame();
     })
